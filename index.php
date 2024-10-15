@@ -25,12 +25,6 @@ require('partials/header.php');
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-
-<div class="container">
-  <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum ratione doloribus, voluptate atque natus non officia consequuntur nisi saepe deleniti provident ad. Nostrum, architecto iure soluta corporis repellendus numquam ea!</p>
-</div>
-
-
 <br>
 
 <h5>Personajes</h5>
@@ -38,16 +32,16 @@ require('partials/header.php');
 <div class="container text-center">
   <div class="row align-items-center">
     <div class="col">
-      <a href="personajes.php"><img height="280px" width="250px" src="img/Personajes/luke-skywalker.webp" alt="luke"></a>
+      <a href="personajes.php"><img height="280px" width="250px" src="img/luke-skywalker.webp" alt="luke"></a>
     </div>
     <div class="col">
-      <img height="280px" width="240px" src="img/Personajes/darth-vader.webp" alt="darth vader">
+      <img height="280px" width="240px" src="img/darth-vader.webp" alt="darth vader">
     </div>
     <div class="col">
-      <img height="280px" width="250px" src="img/Personajes/yoda.webp" alt="yoda">
+      <img height="280px" width="250px" src="img/yoda.webp" alt="yoda">
     </div>
     <div class="col">
-      <img height="280px" width="250px" src="img/Personajes/leia.webp" alt="leia">
+      <img height="280px" width="250px" src="img/leia.webp" alt="leia">
     </div>
   </div>
 </div>
@@ -59,16 +53,16 @@ require('partials/header.php');
 <div class="container text-center">
   <div class="row align-items-center">
     <div class="col">
-      <img height="280px" width="250px" src="img/Naves/a-wing.jfif" alt="a-wing">
+      <img height="280px" width="250px" src="img/a-wing.jfif" alt="a-wing">
     </div>
     <div class="col">
-      <img height="280px" width="240px" src="img/Naves/b-wing.webp" alt="b-wing">
+      <img height="280px" width="240px" src="img/b-wing.webp" alt="b-wing">
     </div>
     <div class="col">
-      <img height="280px" width="250px" src="img/Naves/falcon.webp" alt="falcon">
+      <img height="280px" width="250px" src="img/falcon.webp" alt="falcon">
     </div>
     <div class="col">
-      <img height="280px" width="250px" src="img/Naves/imperial.jpg" alt="imperial">
+      <img height="280px" width="250px" src="img/imperial.jpg" alt="imperial">
     </div>
   </div>
 </div>
@@ -82,16 +76,16 @@ require('partials/header.php');
 <div class="container text-center">
   <div class="row align-items-center">
     <div class="col">
-      <img height="280px" width="250px" src="img/Sables/DarthVaderSaber.webp" alt="darthsable">
+      <img height="280px" width="250px" src="img/DarthVaderSaber.webp" alt="darthsable">
     </div>
     <div class="col">
-      <img height="280px" width="240px" src="img/Sables/kylorensaber.webp" alt="kyosable">
+      <img height="280px" width="240px" src="img/kylorensaber.webp" alt="kyosable">
     </div>
     <div class="col">
-      <img height="280px" width="250px" src="img/Sables/luke-skywalker-lightsaber.jpg" alt="lukesable">
+      <img height="280px" width="250px" src="img/luke-skywalker-lightsaber.jpg" alt="lukesable">
     </div>
     <div class="col">
-      <img height="280px" width="250px" src="img/Sables/macewindusaber.webp" alt="macesable">
+      <img height="280px" width="250px" src="img/macewindusaber.webp" alt="macesable">
     </div>
   </div>
 </div>
@@ -101,16 +95,16 @@ require('partials/header.php');
 <div class="container text-center">
   <div class="row align-items-center">
     <div class="col">
-      <img height="350px" width="250px" src="img/Peliculas/Episode1.jpg" alt="ep1">
+      <img height="350px" width="250px" src="img/Episode1.jpg" alt="ep1">
     </div>
     <div class="col">
-      <img height="350px" width="240px" src="img/Peliculas/episodio2.webp" alt="ep2">
+      <img height="350px" width="240px" src="img/episodio2.webp" alt="ep2">
     </div>
     <div class="col">
-      <img height="350px" width="250px" src="img/Peliculas/episodio3.webp" alt="ep3">
+      <img height="350px" width="250px" src="img/episodio3.webp" alt="ep3">
     </div>
     <div class="col">
-      <img height="350" width="250px" src="img/Peliculas/episodio4.webp" alt="ep4">
+      <img height="350" width="250px" src="img/episodio4.webp" alt="ep4">
     </div>
   </div>
 </div>

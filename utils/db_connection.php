@@ -2,8 +2,8 @@
 
     $host = "localhost";
     $user = "root";
-    $password = "root";
-    $database = "star_wars7";
+    $password = "";
+    $database = "star_warsbd";
 
     $conn = new mysqli($host,$user,$password, $database);
 

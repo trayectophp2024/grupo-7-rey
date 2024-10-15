@@ -38,7 +38,7 @@ echo "</pre>";
 
 <?php require "partials/header.php" ?>
 
-<main class="container">
+<main class="container" >
     <div class="row">
         <h1 class="text-center">Categoria de <?= $tabla ?> </h1>
 

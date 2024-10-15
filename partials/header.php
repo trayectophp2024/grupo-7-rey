@@ -13,28 +13,34 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/estilos.css">
 
+  <!-- ICONOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+  </head>
 
-  <nav class="navbar navbar-expand-lg">
+  <nav class="navbar navbar-expand-lg" style="background-color: #757575">
     <div class="container-fluid">
-      <a class="navbar-brand" href="index.php">ONLY STAR WARS</a>
+      <a class="navbar-brand" style="color:#FFFFFF" href="index.php">ONLY STAR WARS</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav md-4 ms-auto  text-center">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contenido.php?categoria=personajes">Personajes</a>
+            <a class="nav-link active " style="color:#FFFFFF" aria-current="page" href="contenido.php?categoria=personajes">Personajes</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contenido.php?categoria=naves">Naves</a>
+            <a class="nav-link active" style="color:#FFFFFF" aria-current="page" href="contenido.php?categoria=naves">Naves</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contenido.php?categoria=sables">Sables</a>
+            <a class="nav-link active" style="color:#FFFFFF" aria-current="page" href="contenido.php?categoria=sables">Sables</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contenido.php?categoria=peliculas">Peliculas</a>
+            <a class="nav-link active" style="color:#FFFFFF" aria-current="page" href="contenido.php?categoria=peliculas">Peliculas</a>
+          </li>
+          <li class="nav-item opacity-25">
+            <a class="nav-link active" style="color:#FFFFFF" aria-current="page" href="creditos.php">Creditos</a>
           </li>
         </ul>
         <form action="busqueda.php"  method="GET" class="d-flex" role="search">
@@ -43,4 +49,4 @@
       </div>
     </div>
   </nav>
-</head>
+

@@ -8,3 +8,16 @@ body {
 h1,h2,h3,h4{
     font-family: "Audiowide", sans-serif;
 }
+
+
+.footer-a {
+    color: #8a2be2;
+    text-decoration: none;
+}
+
+.redes-sociales i {
+    font-size: 25px;
+    color: #000;
+    text-decoration: none;
+    margin-left: 20px;
+}

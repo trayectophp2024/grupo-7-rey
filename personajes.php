@@ -44,7 +44,7 @@ $intersante = resultados_interesantes($conn , $tabla);
                         <h5 class="card-title"><?= $contenido['nombre'] ?></h5>
                         <p class="card-text"><?= $contenido['descripcion'] ?></p>
                         <p class="card-text">Especie: <?= $contenido['especie'] ?></p>
-                        <p class="card-text">Afiliacion: <?= $contenido['afiliación'] ?></p>
+                        <p class="card-text">Afiliacion: <?= $contenido['afiliacion'] ?></p>
                         <p class="card-text">Planeta Natal: <?= $contenido['planeta_natal'] ?></p>
                         <p class="card-text">Habilidades: <?= $contenido['habilidades'] ?></p>
                         <p class="card-text">Arma: <?= $contenido['arma'] ?></p>

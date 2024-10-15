@@ -39,7 +39,7 @@ function buscar_productos($conn, $termino_busqueda)
     $termino_busqueda = $conn->real_escape_string($termino_busqueda);
 
     // Consultas para buscar naves
-    $sqlNaves = "SELECT 'naves' as tabla , id , nombre , descripción , tipo , fabricante  , longitud , velocidad_maxima , armamento , capacidad , imagen FROM naves
+    $sqlNaves = "SELECT 'naves' as tabla , id , nombre , descripcion , tipo , fabricante  , longitud , velocidad_maxima , armamento , capacidad , imagen FROM naves
            WHERE LOWER(nombre) LIKE '%$termino_busqueda%' 
         ";
 
@@ -49,7 +49,7 @@ function buscar_productos($conn, $termino_busqueda)
         ";
 
     // Consultas para buscar personajes
-    $sqlPersonajes = "SELECT 'personajes' as tabla, id , nombre , descripcion , especie , afiliación , planeta_natal , habilidades , arma , actor , imagen FROM personajes
+    $sqlPersonajes = "SELECT 'personajes' as tabla, id , nombre , descripcion , especie , afiliacion , planeta_natal , habilidades , arma , actor , imagen FROM personajes
            WHERE LOWER(nombre) LIKE '%$termino_busqueda%' 
         ";
 
