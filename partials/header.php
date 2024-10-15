@@ -37,8 +37,8 @@
             <a class="nav-link active" aria-current="page" href="contenido.php?categoria=peliculas">Peliculas</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="buscar..." placeholder="buscar..." aria-label="buscar...">
+        <form action="busqueda.php"  method="GET" class="d-flex" role="search">
+          <input class="form-control me-2" name="q" type="buscar..." placeholder="buscar..." aria-label="buscar...">
         </form>
       </div>
     </div>

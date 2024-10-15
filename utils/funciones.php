@@ -39,22 +39,22 @@ function buscar_productos($conn, $termino_busqueda)
     $termino_busqueda = $conn->real_escape_string($termino_busqueda);
 
     // Consultas para buscar naves
-    $sqlNaves = "SELECT 'personajes' as tabla , id , nombre , descripción , tipo , fabricante  , longitud , velocidad_maxima , armamento , capacidad , img FROM naves
+    $sqlNaves = "SELECT 'naves' as tabla , id , nombre , descripción , tipo , fabricante  , longitud , velocidad_maxima , armamento , capacidad , imagen FROM naves
            WHERE LOWER(nombre) LIKE '%$termino_busqueda%' 
         ";
 
     // Consultas para buscar pelicuas
-    $sqlPeliculas = "SELECT 'naves' as tabla ,id , titulo , episodio , director , año_estreno , duración , imagen` FROM peliculas
+    $sqlPeliculas = "SELECT 'peliculas' as tabla ,id , nombre , episodio , director , ano_estreno , duracion , imagen FROM peliculas
            WHERE LOWER(nombre) LIKE '%$termino_busqueda%' 
         ";
 
     // Consultas para buscar personajes
-    $sqlPersonajes = "SELECT 'personajes' as tabla, id , nombre , descripción , especie , afiliación , planeta_natal , habilidades , arma , actor , imagen FROM personajes
+    $sqlPersonajes = "SELECT 'personajes' as tabla, id , nombre , descripcion , especie , afiliación , planeta_natal , habilidades , arma , actor , imagen FROM personajes
            WHERE LOWER(nombre) LIKE '%$termino_busqueda%' 
         ";
 
     // Consultas para buscar sables
-    $sqlSables = "SELECT 'sables' as tabla, id , nombre , descripción , color , propietario , afiliación , cristal , imagen FROM sables
+    $sqlSables = "SELECT 'sables' as tabla, id , nombre , descripcion , color , propietario , afiliacion , cristal , imagen FROM sables
            WHERE LOWER(nombre) LIKE '%$termino_busqueda%' 
         ";
 
@@ -66,7 +66,7 @@ function buscar_productos($conn, $termino_busqueda)
 
     //Combinar los resultados de las tres tablas 
 
-    $resultado = array_merge($sqlNaves, $sqlPeliculas, $sqlPersonajes, $sqlSables);
+    $resultado = array_merge($resultNaves, $resultPeliculas, $resultPersonajes, $resultSables);
 
     return $resultado;
 
@@ -76,6 +76,23 @@ function buscar_productos($conn, $termino_busqueda)
     $resultado = array_merge($sqlNaves, $sqlPeliculas, $sqlPersonajes, $sqlSables);
 
     return $resultado;
+}
+
+
+/*  Interesantes */
+
+function resultados_interesantes($conn, $tabla) {
+  //1- Realizar consulta o query
+  $sqlPersonajes = "SELECT * FROM " . $tabla . 
+                   " ORDER BY rand()  LIMIT 4" ;
+
+  // 2- Ejecutar la consulta 
+  $result = $conn->query($sqlPersonajes);
+
+  //3- Retornar y convertir la consulta en un array asociativo
+  return $result->fetch_all(MYSQLI_ASSOC);
+
+
 }
 
 ?>

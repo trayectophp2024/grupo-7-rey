@@ -5,11 +5,11 @@ require_once "utils/db_connection.php";
 //Capturar lo que pone el usuario, o el termino busqueda
 $termino_busqueda = $_GET['q'] ?? '';
 
-$contenido = [];
+$contenidos = [];
 
 if ($termino_busqueda) {
     // si hay un termino busqueda, llamamos a la funciona buscar_producto
-    $contenido = buscar_productos($conn, $termino_busqueda);
+    $contenidos = buscar_productos($conn, $termino_busqueda);
 }
 
 ?>
@@ -19,7 +19,7 @@ if ($termino_busqueda) {
 <main class="container">
     <h1 class="text-center">Resultados de la búsqueda</h1>
 
-    <?php if ($termino_busqueda && !empty($contenido)) { ?>
+    <?php if ($termino_busqueda && !empty($contenidos)) { ?>
         <div class="row">
             <?php foreach ($contenidos as $contenido) { ?>
                 <div class="col-4 mt-4 mb-4">
@@ -27,8 +27,8 @@ if ($termino_busqueda) {
                         <img src="img/<?= $contenido['imagen'] ?>" class="card-img-top" alt="">
                         <div class="card-body">
                             <h5 class="card-title"><?= $contenido['nombre'] ?></h5>
-                            <h5 class="card-title text-success">$<?= $contenido['descripcion'] ?></h5>
-                            <a href="contenido-particular.php?categorias=<?=$contenido['tabla'] ?>&id=<?= $contenido ['id'] ?>" class="btn btn-primary">Ver</a>
+                            
+                            <a href="<?=$contenido['tabla'] ?>.php?categorias=<?=$contenido['tabla'] ?>&id=<?= $contenido ['id'] ?>" class="btn btn-primary">Ver</a>
                         </div>
                     </div>
                 </div>

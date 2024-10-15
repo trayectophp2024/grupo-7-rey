@@ -15,6 +15,8 @@ $contenidos = categoria_particular($conn, $tabla, $id);
 
 $contenido = $contenidos[0] ?? NULL;
 
+$intersante = resultados_interesantes($conn , $tabla);
+
 /*  echo "<pre>";
         var_dump($contenido);
     echo "</pre>";  */
@@ -56,4 +58,28 @@ $contenido = $contenidos[0] ?? NULL;
     <?php } ?>
 
 </main>
+
+<section class="container mt-5">
+     <h2>Podrian  Interesarte</h2>
+
+     <div class="row">
+     <?php foreach ($intersante as $contenido) { ?>
+            <div class="col-3 mt-4 mb-4 gap-4">
+                <div class="card" style="width: 16rem;">
+                    <img height="400px" src="img/<?= $contenido['imagen']; ?>" class="card-img-top" alt="">
+                    <div class="card-body" style="height: 150px;">
+                        <h5 class="card-title"><?= $contenido['nombre']; ?></h5>
+                        <a href="<?= $tabla ?>.php?categorias=<?= $tabla ?>&id=<?= $contenido['id'] ?>"><button type="button" class="btn btn-outline-dark">Saber más</button></a>
+                    </div>
+                </div>
+            </div>
+
+        <?php } ?>
+
+        </div>
+
+        
+</section>
+
+
 <?php require "partials/footer.php" ?>
