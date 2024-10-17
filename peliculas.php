@@ -25,6 +25,7 @@ $intersante = resultados_interesantes($conn , $tabla);
 
 <?php require "partials/header.php" ?>
 
+<body style="background-color: #8896D3;">
 <main class="container">
 
     <nav aria-label="breadcrumb">

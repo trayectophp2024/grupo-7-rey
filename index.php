@@ -1,7 +1,7 @@
 <?php
 require('partials/header.php');
 ?>
-
+  
 
 
 <div id="carouselExampleFade" class="carousel slide carousel-fade">
@@ -109,7 +109,6 @@ require('partials/header.php');
   </div>
 </div>
 <br>
-
 
 <?php
 require('partials/footer.php');

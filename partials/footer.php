@@ -12,6 +12,9 @@
     <a href="#">
       <i class="fa-brands fa-square-facebook"></i>
     </a>
+    <a href="#">
+      <i class="fa-solid fa-qrcode"></i>
+    </a>
   </div>
 </footer>
 

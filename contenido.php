@@ -38,9 +38,10 @@ echo "</pre>";
 
 <?php require "partials/header.php" ?>
 
-<main class="container" >
+<body style="background-color: #000000 ;">
+<main class="container">
     <div class="row">
-        <h1 class="text-center">Categoria de <?= $tabla ?> </h1>
+        <h1 class="text-center" style="color: #f4de5d;">Categoria de <?= $tabla ?> </h1>
 
         <?php foreach ($categorias as $contenido) { ?>
             <div class="col-4 mt-4 mb-4">

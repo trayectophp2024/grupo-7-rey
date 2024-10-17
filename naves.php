@@ -11,7 +11,7 @@ $contenidos = categoria_particular($conn, $tabla, $id);
     var_dump($contenidos);
     echo "</pre>"; */
 
-/* Obtener nombre del produto */
+/* Obtener nombre del CONTENIDO */
 
 $contenido = $contenidos[0] ?? NULL;
 
@@ -24,7 +24,7 @@ $intersante = resultados_interesantes($conn , $tabla);
 ?>
 
 <?php require "partials/header.php" ?>
-
+<body style="background-color: #dfac86 ;">
 <main class="container">
 
     <nav aria-label="breadcrumb">
