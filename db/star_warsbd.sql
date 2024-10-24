@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2024 a las 00:05:03
+-- Tiempo de generación: 24-10-2024 a las 20:31:14
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -18,8 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `starwars`
+-- Base de datos: `star_warsbd`
 --
+CREATE DATABASE IF NOT EXISTS `star_warsbd` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `star_warsbd`;
 
 -- --------------------------------------------------------
 
@@ -30,28 +32,28 @@ SET time_zone = "+00:00";
 CREATE TABLE `naves` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `descripción` text NOT NULL,
+  `descripcion` text NOT NULL,
   `tipo` varchar(50) NOT NULL,
   `fabricante` varchar(50) NOT NULL,
   `longitud` decimal(11,2) NOT NULL,
   `velocidad_maxima` int(11) NOT NULL,
   `armamento` varchar(50) NOT NULL,
   `capacidad` int(11) NOT NULL,
-  `img` varchar(70) NOT NULL
+  `imagen` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `naves`
 --
 
-INSERT INTO `naves` (`id`, `nombre`, `descripción`, `tipo`, `fabricante`, `longitud`, `velocidad_maxima`, `armamento`, `capacidad`, `img`) VALUES
+INSERT INTO `naves` (`id`, `nombre`, `descripcion`, `tipo`, `fabricante`, `longitud`, `velocidad_maxima`, `armamento`, `capacidad`, `imagen`) VALUES
 (1, 'Millennium Falcon', 'El Millennium Falcon es una nave Corelliana modificada, famosa por su velocidad y maniobrabilidad. Piloteada por Han Solo y Chewbacca, esta nave ha jugado un papel crucial en muchas de las principales batallas de la Guerra Civil Galáctica, incluyendo la destrucción de ambas Estrellas de la Muerte. Con su hipermotor mejorado y cañones láser dobles, es una de las naves más rápidas y versátiles de la galaxia.\r\n', 'Carguero ligero YT-1300', 'Corellian Engineering Corporat', 34.75, 1050, 'Cañones láser', 6, 'falcon.webp\r\n'),
 (2, 'X-Wing ', 'El X-Wing  es el principal caza estelar de la Alianza Rebelde, conocido por su forma de ala en X y su capacidad de operar en casi cualquier entorno. Equipado con cuatro cañones láser y torpedos de protones, el X-Wing es altamente maniobrable y ha sido instrumental en muchas victorias rebeldes, incluyendo la Batalla de Yavin donde destruyó la primera Estrella de la Muerte.\r\n', 'Caza estelar', 'Incom Corporation', 12.50, 1050, 'Cañones láser', 1, 'X-Wing.webp\r\n'),
-(3, 'TIE Fighter', 'El TIE Fighter es el caza estelar más común del Imperio Galáctico. Su diseño distintivo, con paneles solares hexagonales y un cockpit central, lo hace fácilmente reconocible. Aunque carece de escudos y es vulnerable en combate, su velocidad y producción en masa lo convierten en una herramienta efectiva para mantener el control imperial sobre la galaxia.\r\n', 'Caza estelar', 'Sienar Fleet Systems', 6.30, 1200, 'Cañones láser', 1, 'tie.jpg\r\n'),
+(3, 'TIE Fighter', 'El TIE Fighter es el caza estelar más común del Imperio Galáctico. Su diseño distintivo, con paneles solares hexagonales y un cockpit central, lo hace fácilmente reconocible. Aunque carece de escudos y es vulnerable en combate, su velocidad y producción en masa lo convierten en una herramienta efectiva para mantener el control imperial sobre la galaxia.\r\n', 'Caza estelar', 'Sienar Fleet Systems', 6.30, 1200, 'Cañones láser', 1, 'tie.jpeg\r\n'),
 (4, 'Slave I', 'Slave I es la nave personal de Boba Fett, un cazarrecompensas notorio. Originalmente diseñada como una nave patrullera, ha sido modificada con armamento pesado y equipos de rastreo avanzados. Su diseño único le permite moverse en cualquier dirección durante el vuelo, y ha sido utilizada en numerosas misiones peligrosas por su dueño.\r\n', 'Nave de patrulla clase Firespr', 'Kuat Systems Engineering', 21.50, 1000, 'Misiles', 1, 'slave1.jpg\r\n'),
 (5, 'Imperial Star Destroyer', 'El Imperial Star Destroyer es la columna vertebral de la flota del Imperio Galáctico. Estas enormes naves de guerra son capaces de llevar a cabo ataques planetarios y enfrentarse a flotas enteras. Armados con turbolásers y capaces de transportar tropas, cazas TIE y otros vehículos, los Destructores Estelares representan el poderío militar del Imperio.\r\n', 'Crucero de guerra', 'Kuat Drive Yards', 1600.50, 975, 'Rayos tractores', 47000, 'imperial.jpg\r\n'),
-(6, 'A-Wing', 'El A-Wing es uno de los cazas estelares más rápidos de la galaxia, utilizado por la Alianza Rebelde para misiones de intercepción y ataques rápidos. Su diseño aerodinámico y sus potentes motores lo hacen altamente maniobrable, aunque su armamento y blindaje son limitados. Es especialmente efectivo en combates de alta velocidad.\r\n', 'Caza estelar', 'Alliance Underground Engineeri', 9.60, 1300, 'Cañones láser', 1, 'a-wing.jpg\r\n'),
-(7, 'B-Wing', 'El B-Wing es un caza-bombardero avanzado utilizado por la Alianza Rebelde. Diseñado para atacar grandes naves de guerra, está equipado con cañones láser, iones y torpedos de protones. Su diseño inusual, con un ala principal que gira alrededor del cockpit, le da una ventaja táctica única en combate.\r\n', 'Caza-bombardero', 'Slayn & Korpil', 16.90, 950, 'Torpedos de protones', 1, 'b-wing.jpg\r\n'),
+(6, 'A-Wing', 'El A-Wing es uno de los cazas estelares más rápidos de la galaxia, utilizado por la Alianza Rebelde para misiones de intercepción y ataques rápidos. Su diseño aerodinámico y sus potentes motores lo hacen altamente maniobrable, aunque su armamento y blindaje son limitados. Es especialmente efectivo en combates de alta velocidad.\r\n', 'Caza estelar', 'Alliance Underground Engineeri', 9.60, 1300, 'Cañones láser', 1, 'a-wing.jfif\r\n\r\n'),
+(7, 'B-Wing', 'El B-Wing es un caza-bombardero avanzado utilizado por la Alianza Rebelde. Diseñado para atacar grandes naves de guerra, está equipado con cañones láser, iones y torpedos de protones. Su diseño inusual, con un ala principal que gira alrededor del cockpit, le da una ventaja táctica única en combate.\r\n', 'Caza-bombardero', 'Slayn & Korpil', 16.90, 950, 'Torpedos de protones', 1, 'b-wing.webp\r\n'),
 (8, 'Y-Wing', 'El Y-Wing es un bombardero robusto y resistente utilizado por la Alianza Rebelde. Aunque más lento que otros cazas, es altamente efectivo en ataques contra grandes naves y estaciones espaciales. Equipado con cañones láser, torpedos de protones y bombas de iones, ha sido crucial en muchas operaciones de la Rebelión.\r\n', 'Bombardero', 'Koensayr Manufacturing', 16.90, 1000, 'Bombas de iones', 2, 'Y-Wing.webp'),
 (9, 'TIE Interceptor', 'El TIE Interceptor es una variante mejorada del TIE Fighter, diseñada para ser más rápida y mortal. Con sus alas en forma de cuchilla y cañones láser adicionales, el Interceptor es una de las naves más temidas en la flota imperial. Su velocidad superior le permite superar a la mayoría de los cazas rebeldes en combate.\r\n', 'Caza estelar', 'Sienar Fleet Systems', 9.60, 1250, 'Cañones láser cuádruples', 1, 'tie-intercep.webp\r\n'),
 (10, 'Naboo N-1 Starfighter', 'El N-1 Starfighter es un caza estelar utilizado por la fuerza de defensa de Naboo. Con su diseño elegante y armamento eficiente, ha demostrado ser eficaz tanto en combates espaciales como en la defensa planetaria. Esta nave fue utilizada notablemente durante la Batalla de Naboo, donde jugó un papel importante en la victoria sobre la Federación de Comercio.', 'Caza estelar', 'Theed Palace Space Vessel Engineering Corps', 11.00, 1100, 'Cañones láser', 1, 'naboo.webp\r\n');
@@ -64,13 +66,30 @@ INSERT INTO `naves` (`id`, `nombre`, `descripción`, `tipo`, `fabricante`, `long
 
 CREATE TABLE `peliculas` (
   `id` int(11) NOT NULL,
-  `titulo` varchar(50) NOT NULL,
-  `episodio` int(11) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `episodio` varchar(11) NOT NULL,
+  `descripcion` text NOT NULL,
   `director` varchar(50) NOT NULL,
-  `año_estreno` date NOT NULL,
-  `duración` time NOT NULL,
+  `ano_estreno` year(4) NOT NULL,
+  `duracion` time NOT NULL,
   `imagen` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `peliculas`
+--
+
+INSERT INTO `peliculas` (`id`, `nombre`, `episodio`, `descripcion`, `director`, `ano_estreno`, `duracion`, `imagen`) VALUES
+(1, 'Star Wars: Episode I - The Phantom Menace', '1', 'Ambientada 32 años antes de los eventos de la trilogía original, \"La Amenaza Fantasma\" sigue al Maestro Jedi Qui-Gon Jinn y a su aprendiz Obi-Wan Kenobi mientras protegen a la Reina Amidala y descubren a un joven esclavo llamado Anakin Skywalker, quien muestra un potencial excepcional con la Fuerza. La película explora los primeros conflictos con los Sith y el inicio de las Guerras Clon.\r\n', 'George Lucas', '1999', '00:01:36', 'episodio1.webp\r\n'),
+(2, 'Star Wars: Episode II - Attack of the Clones', '2', 'Diez años después de \"La Amenaza Fantasma\", \"El Ataque de los Clones\" se centra en el creciente conflicto entre la República y el movimiento separatista. Anakin Skywalker, ahora un joven Jedi, se enfrenta a nuevos desafíos emocionales mientras protege a Padmé Amidala, y la galaxia se prepara para una guerra a gran escala. La película introduce el inicio de las Guerras Clon.\r\n', 'George Lucas', '2002', '00:01:42', 'episodio2.webp\r\n'),
+(3, 'Star Wars: Episode III - Revenge of the Sith', '3', 'La venganza de los Sith muestra el dramático desenlace de las Guerras Clon, donde Anakin Skywalker sucumbe al lado oscuro, se convierte en Darth Vader, y ayuda a Darth Sidious a destruir la Orden Jedi. La película concluye con la caída de la República y el nacimiento del Imperio Galáctico, así como con el nacimiento de Luke y Leia, hijos de Anakin y Padmé.\r\n', 'George Lucas', '2005', '00:01:40', 'episodio3.webp\r\n'),
+(4, 'Star Wars: Episode IV - A New Hope', '4', 'Originalmente lanzada como \"Star Wars\" en 1977, \"Una Nueva Esperanza\" sigue a Luke Skywalker, un joven granjero que se une a la Alianza Rebelde para combatir al Imperio Galáctico. Con la ayuda de la Princesa Leia, Han Solo, y Obi-Wan Kenobi, Luke destruye la primera Estrella de la Muerte, marcando una gran victoria para la Rebelión.\r\n', 'George Lucas', '1977', '00:01:21', 'episodio4.webp\r\n'),
+(5, 'Star Wars: Episode V - The Empire Strikes Back', '5', 'Considerada una de las mejores películas de la saga, \"El Imperio Contraataca\" muestra a los rebeldes huyendo del Imperio después de la Batalla de Hoth. Luke Skywalker recibe entrenamiento de Yoda, pero se enfrenta a una amarga derrota en su enfrentamiento con Darth Vader, quien revela su verdadera identidad. La película deja a la galaxia en un punto bajo, con los héroes dispersos y en peligro.\r\n', 'Irvin Kershner', '1980', '00:01:24', 'episodio5.webp\r\n'),
+(6, 'Star Wars: Episode VI - Return of the Jedi', '6', 'En \"El Retorno del Jedi\", la Alianza Rebelde se enfrenta al Imperio en la batalla final. Luke Skywalker confronta a Darth Vader y al Emperador Palpatine en la segunda Estrella de la Muerte. Con la redención de Vader y la destrucción del Emperador, la película concluye la trilogía original con la caída del Imperio y la restauración de la paz en la galaxia.\r\n', 'Richard Marquand', '1983', '00:01:31', 'episodio6.webp\r\n'),
+(7, 'Star Wars: Episode VII - The Force Awakens', '7', 'Ambientada 30 años después de la caída del Imperio, \"El Despertar de la Fuerza\" introduce a una nueva generación de héroes en la lucha contra la Primera Orden, una organización que busca continuar el legado de Darth Vader. Rey, una chatarrera de Jakku, descubre su conexión con la Fuerza y busca a Luke Skywalker, el último Jedi, para que la entrene.\r\n', 'J.J. Abrams', '2015', '00:01:38', 'episodio7.webp\r\n'),
+(8, 'Star Wars: Episode VIII - The Last Jedi', '8', 'En \"Los Últimos Jedi\", Rey busca entrenamiento de Luke Skywalker, quien ha exiliado a sí mismo tras la caída de su intento de reconstruir la Orden Jedi. Mientras tanto, la Resistencia lucha por sobrevivir contra la Primera Orden. La película explora temas de legado, redención, y el conflicto entre la luz y la oscuridad dentro de Rey y Kylo Ren.\r\n', 'Rian Johnson', '2017', '00:01:52', 'episodio8.webp\r\n'),
+(9, 'Star Wars: Episode IX - The Rise of Skywalker', '9', 'La conclusión de la saga Skywalker, \"El Ascenso de Skywalker\" sigue a Rey, Finn y Poe mientras se enfrentan a la amenaza final del Emperador Palpatine, quien ha regresado de las sombras para liderar la Primera Orden. Rey descubre la verdad sobre su linaje y enfrenta su destino en una batalla épica por el futuro de la galaxia.\r\n', 'J.J. Abrams', '2019', '00:01:42', 'episodio9.webp\r\n'),
+(10, 'Rogue One: A Star Wars Story', 'N/A', 'Rogue One\" narra la historia del grupo de rebeldes que roba los planos de la primera Estrella de la Muerte, evento que se menciona en \"Una Nueva Esperanza\". Liderados por Jyn Erso, los rebeldes arriesgan sus vidas en una misión suicida para asegurar la victoria de la Alianza Rebelde. La película destaca por su tono más oscuro y su enfoque en los sacrificios hechos por aquellos que luchan contra el Imperio.\r\n', 'Gareth Edwards', '2016', '00:01:33', 'rogue-one.webp\r\n');
 
 -- --------------------------------------------------------
 
@@ -81,9 +100,9 @@ CREATE TABLE `peliculas` (
 CREATE TABLE `personajes` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `descripción` text NOT NULL,
+  `descripcion` text NOT NULL,
   `especie` varchar(30) NOT NULL,
-  `afiliación` varchar(30) NOT NULL,
+  `afiliacion` varchar(30) NOT NULL,
   `planeta_natal` varchar(30) NOT NULL,
   `habilidades` varchar(50) NOT NULL,
   `arma` varchar(30) NOT NULL,
@@ -95,7 +114,7 @@ CREATE TABLE `personajes` (
 -- Volcado de datos para la tabla `personajes`
 --
 
-INSERT INTO `personajes` (`id`, `nombre`, `descripción`, `especie`, `afiliación`, `planeta_natal`, `habilidades`, `arma`, `actor`, `imagen`) VALUES
+INSERT INTO `personajes` (`id`, `nombre`, `descripcion`, `especie`, `afiliacion`, `planeta_natal`, `habilidades`, `arma`, `actor`, `imagen`) VALUES
 (1, 'Luke Skywalker', 'Luke Skywalker es un caballero Jedi legendario que desempeñó un papel fundamental en la derrota del Imperio Galáctico. Nacido como el hijo de Anakin Skywalker y Padmé Amidala, Luke fue criado en el planeta desértico Tatooine. Con el tiempo, se convirtió en un poderoso Jedi bajo la tutela de Obi-Wan Kenobi y Yoda, luchando contra su propio padre, Darth Vader, y el Emperador Palpatine para restaurar la paz en la galaxia.', 'Humano', 'Rebel Alliance', 'Tatooine', 'Uso de la Fuerza', 'Sable de luz', 'Mark Hamill', 'luke-skywalker.webp'),
 (2, 'Darth Vader', 'Darth Vader, antes conocido como Anakin Skywalker, fue un Jedi prodigioso que sucumbió al lado oscuro de la Fuerza. Como aprendiz del Emperador Palpatine, se convirtió en uno de los más temidos señores Sith de la galaxia. A pesar de su caída, la redención de Vader llegó a través de su hijo, Luke, a quien ayudó a destruir al Emperador antes de morir, cumpliendo la profecía que lo había destinado a traer equilibrio a la Fuerza.', 'Humano', 'Imperio Galáctico', 'Tatooine', 'Combate con sable de luz ', 'Sable de luz', 'James Earl Jones', 'darth-vader.webp'),
 (3, 'Leia Organa', 'Leia Organa es la princesa de Alderaan y una líder clave en la Alianza Rebelde. Como hija de Anakin Skywalker y hermana gemela de Luke, Leia es también fuerte en la Fuerza, aunque fue entrenada principalmente como diplomática y estratega. Su valentía y determinación fueron cruciales en la lucha contra el Imperio, y posteriormente, en la resistencia contra la Primera Orden. También es conocida por su espíritu indomable y sus habilidades como comandante.', 'Humano', 'Rebel Alliance', 'Alderaan', 'Diplomacia', 'Blaster', 'Carrie Fisher', 'leia.webp'),
@@ -130,13 +149,25 @@ INSERT INTO `personajes` (`id`, `nombre`, `descripción`, `especie`, `afiliació
 CREATE TABLE `sables` (
   `id` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL,
-  `descripción` text NOT NULL,
+  `descripcion` text NOT NULL,
   `color` varchar(30) NOT NULL,
   `propietario` varchar(30) NOT NULL,
-  `afiliación` varchar(30) NOT NULL,
+  `afiliacion` varchar(30) NOT NULL,
   `cristal` varchar(30) NOT NULL,
   `imagen` varchar(70) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `sables`
+--
+
+INSERT INTO `sables` (`id`, `nombre`, `descripcion`, `color`, `propietario`, `afiliacion`, `cristal`, `imagen`) VALUES
+(1, 'Sable de luz de Darth Vader', 'El sable de luz de Darth Vader fue construido después de que Anakin Skywalker se convirtiera en el aprendiz Sith de Darth Sidious. Con su característico color rojo, el sable simboliza la completa caída de Anakin al lado oscuro y fue utilizado para ejecutar la Orden 66, exterminando a la mayoría de los Jedi.\r\n', 'Rojo', 'Darth Vader', 'Sith', 'Cristal Kyber corrupto', 'DarthVaderSaber.webp\r\n'),
+(2, 'Sable de luz de Luke Skywalker', 'El sable de luz verde de Luke Skywalker fue construido por él mismo tras perder el sable de su padre en Bespin. Este sable lo acompañó en sus enfrentamientos contra el Imperio Galáctico y más tarde contra la Primera Orden. Es un símbolo del legado de los Jedi y del camino de Luke hacia convertirse en un maestro Jedi.\r\n', 'Verde', 'Luke Skywalker', 'Orden Jedi', 'Cristal Kyber', 'luke-skywalker-lightsaber.jpg\r\n'),
+(3, 'Sable de luz de Mace Windu', 'El sable de luz púrpura de Mace Windu es uno de los más distintivos entre los Jedi. Su color refleja el equilibrio que Mace buscaba entre el lado luminoso y el lado oscuro de la Fuerza. Utilizó este sable en muchas batallas, incluida la fatídica confrontación con el Canciller Palpatine.\r\n', 'Púrpura', 'Mace Windu', 'Orden Jedi', 'Cristal Kyber', 'macewindusaber.webp\r\n'),
+(4, 'Sable de luz de Yoda', 'El sable de luz de Yoda es más pequeño que el de un Jedi promedio, adecuado para su estatura. De color verde, el sable fue utilizado por Yoda durante las Guerras Clon y su duelo con el Emperador Palpatine. Es un símbolo del poder y la sabiduría del Maestro Jedi más antiguo y respetado.\r\n', 'Verde', 'Yoda', 'Orden Jedi', 'Cristal Kyber', 'yodasaber.webp\r\n'),
+(5, 'Sable de luz de Obi-Wan Kenobi', 'El sable de luz de Obi-Wan Kenobi es un símbolo de su habilidad y compromiso con la Orden Jedi. Construido por el propio Obi-Wan tras su promoción a Caballero Jedi, este sable de luz azul lo acompañó en algunas de las batallas más importantes de las Guerras Clon, incluyendo su duelo final con Anakin Skywalker en Mustafar. Después de las Guerras Clon, Obi-Wan lo mantuvo hasta su enfrentamiento final con Darth Vader en la Estrella de la Muerte.\r\n', 'Azul', 'Obi-Wan Kenobi', 'Orden Jedi', 'Cristal Kyber', 'obiwansaber.webp\r\n'),
+(6, 'Sable de luz de Kylo Ren', 'El sable de luz de Kylo Ren es un arma única que refleja su naturaleza inestable y su lucha interna. Su hoja roja, alimentada por un cristal Kyber dañado, emite un resplandor irregular y furioso. El diseño cruzado del sable, con dos pequeñas hojas adicionales que sirven como guarda, es tan inusual como su propietario, quien lo creó tras su caída al lado oscuro. Este sable es un símbolo del poder y la ira de Kylo Ren como líder de la Primera Orden.\r\n', 'Rojo', 'Kylo Ren', 'Sith', 'Cristal Kyber dañado', 'kylorensaber.webp\r\n');
 
 --
 -- Índices para tablas volcadas
@@ -180,7 +211,7 @@ ALTER TABLE `naves`
 -- AUTO_INCREMENT de la tabla `peliculas`
 --
 ALTER TABLE `peliculas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `personajes`
@@ -192,7 +223,7 @@ ALTER TABLE `personajes`
 -- AUTO_INCREMENT de la tabla `sables`
 --
 ALTER TABLE `sables`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
