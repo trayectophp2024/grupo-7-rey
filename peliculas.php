@@ -43,10 +43,10 @@ $intersante = resultados_interesantes($conn , $tabla);
                     <div class="card-body">
                         <h5 class="card-title"><?= $contenido['nombre'] ?></h5>
                         <p class="card-text"><?= $contenido['descripcion'] ?></p>
-                        <p class="card-text">Episodio:<?= $contenido['episodio'] ?></p>
-                        <p class="card-text">Duracion:<?= $contenido['duracion'] ?></p>
-                        <p class="card-text">Director:<?= $contenido['director'] ?></p>
-                        <p class="card-text">Año de estreno:<?= $contenido['ano_estreno'] ?></p>
+                        <p class="card-text">Episodio: <?= $contenido['episodio'] ?></p>
+                        <p class="card-text">Duracion: <?= $contenido['duracion'] ?> minutos</p>
+                        <p class="card-text">Director: <?= $contenido['director'] ?></p>
+                        <p class="card-text">Año de estreno: <?= $contenido['ano_estreno'] ?></p>
                     </div>
                 </div>
                 <div class="col-md-4">

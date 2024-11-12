@@ -43,7 +43,7 @@
           </li>
         </ul>
         <form action="busqueda.php"  method="GET" class="d-flex" role="search">
-          <input class="form-control me-2" name="q" type="buscar..." placeholder="buscar..." aria-label="buscar...">
+          <input class="form-control me-2" name="q" type="buscar..." placeholder="buscar..." aria-label="buscar..." maxlength="30">
         </form>
       </div>
     </div>

@@ -44,10 +44,10 @@ $intersante = resultados_interesantes($conn , $tabla);
                         <p class="card-text"><?= $contenido['descripcion'] ?></p>
                         <p class="card-text">Tipo: <?= $contenido['tipo'] ?></p>
                         <p class="card-text">Fabricane: <?= $contenido['fabricante'] ?></p>
-                        <p class="card-text">Longitud: <?= $contenido['longitud'] ?></p>
-                        <p class="card-text">Velocidad Maxima: <?= $contenido['velocidad_maxima'] ?></p>
+                        <p class="card-text">Longitud: <?= $contenido['longitud'] ?> metros</p>
+                        <p class="card-text">Velocidad Maxima: <?= $contenido['velocidad_maxima'] ?> Km/h</p>
                         <p class="card-text">Armamento: <?= $contenido['armamento'] ?></p>
-                        <p class="card-text">Capacidad: <?= $contenido['capacidad'] ?></p>
+                        <p class="card-text">Capacidad: <?= $contenido['capacidad'] ?> personas</p>
                     </div>
                 </div>
                 <div class="col-md-4">

@@ -18,7 +18,7 @@ $tablas = [
 /* Comprobar si el array existe */
 
 if(!array_key_exists($tabla, $tablas)){
-    header('Location: error404.php');
+    header('Location: error-404.php');
 }
 
 
